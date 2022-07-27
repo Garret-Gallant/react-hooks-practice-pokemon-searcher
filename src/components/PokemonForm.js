@@ -2,6 +2,9 @@ import React from "react";
 import { Form } from "semantic-ui-react";
 
 function PokemonForm() {
+  
+  
+  
   return (
     <div>
       <h3>Add a Pokemon!</h3>
