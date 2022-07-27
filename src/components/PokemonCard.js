@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Card } from "semantic-ui-react";
 
-function PokemonCard( {hp, name, sprites, spritesBack} ) {
+function PokemonCard( {pokemon} ) {
   const [isFlipped, setIsFlipped] = useState(true);
+  const {hp, name, sprites} = pokemon
+
   function cardFlip() {
     setIsFlipped((isFlipped) => !isFlipped);
   }
@@ -11,7 +13,7 @@ function PokemonCard( {hp, name, sprites, spritesBack} ) {
     <Card onClick={cardFlip}>
       <div>
         <div className="image">
-          <img src={isFlipped ? sprites : spritesBack} alt="oh no!" />
+          <img src={isFlipped ? sprites.front : sprites.back} alt="oh no!" />
         </div>
         <div className="content">
           <div className="header">{name}</div>

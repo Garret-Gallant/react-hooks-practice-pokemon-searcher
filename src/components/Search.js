@@ -1,22 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 
-function Search( {setPokemon, pokemons} ) {
-  const [searchPokemon, setSearchPokemon] = useState("")
-
-  console.log(searchPokemon)
-
-  function filterPokemons(){
-    const newPokemons = pokemons.filter((pokemon) => pokemon.name.includes(searchPokemon))
-    setPokemon(newPokemons)
-  }
+function Search( { setSearchPokemon } ) {
 
   return (
     <div className="ui search">
       <div className="ui icon input">
-        <input type='text' onChange={(e) => {
-          setSearchPokemon(e.target.value)
-          filterPokemons()
-        }} className="prompt" />
+        <input 
+        type="text" 
+        className="prompt" 
+        onChange={(e) => setSearchPokemon(e.target.value)}
+        />
         <i className="search icon" />
       </div>
     </div>
